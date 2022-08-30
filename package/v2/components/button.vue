@@ -3,14 +3,9 @@
 </template>
 
 <script>
-import {
-  defineComponent,
-  Vue2,
-  isVue2,
-  isVue3,
-  createVNode,
-  render,
-} from "vue-demi";
+import { defineComponent, isVue2, Vue2, isVue3 } from "vue-demi";
+// import * as vueObj from "vue-demi"; // 使用打包进库中的vue-demi，调用 createVNode、render创建的弹框Card无法携带 scoped 的样式，需要去掉scoped
+import * as vueObj from "vue"; // 使用项目中的vue，调用 createVNode、render创建的弹框Card 样式正常
 import Card from "./card.vue";
 
 export default defineComponent({
@@ -22,24 +17,23 @@ export default defineComponent({
   },
   methods: {
     btnFun() {
-      console.log(isVue2);
       const node = document.getElementById("game-card");
       if (!node) {
         if (isVue2) {
-          // const gameCardComponent = Vue2.extend(Card);
-          // const gameCardInstance = new gameCardComponent({
-          //   propsData: {
-          //     btnObj: this,
-          //   },
-          // }).$mount();
-          // document.body.appendChild(gameCardInstance.$el);
+          const gameCardComponent = Vue2.extend(Card);
+          const gameCardInstance = new gameCardComponent({
+            propsData: {
+              btnObj: this,
+            },
+          }).$mount();
+          document.body.appendChild(gameCardInstance.$el);
         }
         if (isVue3) {
-          console.log(666);
-          // const gameCardComponent = createVNode(Card, {
-          //   btnObj: this,
-          // });
-          // render(gameCardComponent, document.querySelector("body"));
+          const { createVNode, render } = vueObj;
+          const gameCardComponent = createVNode(Card, {
+            btnObj: this,
+          });
+          render(gameCardComponent, document.querySelector("body"));
         }
       }
     },
