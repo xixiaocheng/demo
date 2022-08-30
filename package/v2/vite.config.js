@@ -18,8 +18,8 @@ export default defineConfig({
       name: "test",
     },
     rollupOptions: {
-      external: ["vue-demi", "vue"], // 理论上我觉得还是得把vue-demi打入包中，这样使用组件的项目不需要额外再安装vue-demi
-      // external: ['vue'],
+      // external: ["vue-demi", "vue"],
+      external: ['vue'], // 理论上我觉得还是得把vue-demi打入包中，这样使用组件的项目不需要额外再安装vue-demi
       output: {
         // dir: getLibDir(version),
         globals: {
