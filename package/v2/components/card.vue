@@ -32,7 +32,7 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   overflow: auto;
-  z-index: 1;
+  z-index: 99;
   padding: 20px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
