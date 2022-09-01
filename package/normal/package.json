@@ -1,0 +1,19 @@
+{
+  "name": "normal",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "rimraf lib && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "sass": "^1.54.8",
+    "vite": "^3.0.7",
+    "vite-plugin-style-inject": "0.0.1",
+    "vite-plugin-vue2": "^2.0.2",
+    "vue-template-compiler": "^2.7.10"
+  }
+}
