@@ -1,5 +1,5 @@
 <template>
-  <div class="main-btn" @click="btnFun">{{ plus }}</div>
+  <div class="main-btn" @click="btnFun">{{ number }}</div>
 </template>
 
 <script>

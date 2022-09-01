@@ -1,7 +1,9 @@
 <template>
   <div id="game-card" class="bui-modal">
     <div class="download-dialog bui-dialog">
-      <div style="width: 200px; height: 30px" @click="test"></div>
+      <div style="width: 200px; height: 30px; color: black" @click="test">
+        {{ btnObj.number}}
+      </div>
     </div>
   </div>
 </template>
@@ -16,6 +18,7 @@ export default defineComponent({
   },
   methods: {
     test() {
+      this.btnObj.plus();
       console.log(this.btnObj);
     },
   },
