@@ -1,19 +1,24 @@
 <template>
   <div id="app">
-    <game_btn />
+    <game_btn ref="btn" />
+    <div @click="test">点击</div>
   </div>
 </template>
 
 <script>
-  import game_btn from '../../../package/v2/lib/demo';
-  import '../../../package/v2/lib/style.css';
+import game_btn from "../../../package/v2/lib/v2/demo";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    game_btn
-  }
-}
+    game_btn,
+  },
+  methods: {
+    test() {
+      console.log(this.$refs.btn.btnFun());
+    },
+  },
+};
 </script>
 
 <style>
