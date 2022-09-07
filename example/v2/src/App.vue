@@ -6,9 +6,7 @@
 </template>
 
 <script>
-import game_btn from "../../../package/v2/lib/v2/demo";
-// import game_btn from "../../../package/v3/lib/demo";
-// import game_btn from "../../../package/normal/lib/demo";
+import game_btn from "../../../package/lib/v2/demo";
 
 export default {
   name: "App",

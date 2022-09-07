@@ -7,7 +7,7 @@
 
 <script setup>
 import { ref } from "vue";
-import game_btn from "../../../package/v2/lib/v3/demo";
+import game_btn from "../../../package/lib/v3/demo";
 
 const btn = ref(null);
 const test = () => {

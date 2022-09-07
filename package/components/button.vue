@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, isVue2, Vue2, isVue3 } from "vue-demi";
+import { defineComponent, isVue2, Vue2, isVue3 } from "vue-demi";
 // import * as vueObj from "vue-demi"; // 使用打包进库中的vue-demi，调用 createVNode、render创建的弹框Card无法携带 scoped 的样式，需要去掉scoped
 import * as vueObj from "vue"; // 使用项目中的vue，调用 createVNode、render创建的弹框Card 样式正常
 import Card from "./card.vue";
@@ -21,6 +21,7 @@ export default defineComponent({
     },
     btnFun() {
       const node = document.getElementById("game-card");
+      console.log(isVue2);
       if (!node) {
         if (isVue2) {
           const gameCardComponent = Vue2.extend(Card);

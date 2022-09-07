@@ -34,6 +34,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["vue-demi"],
   },
+  // plugin: [ createVuePlugin(), VitePluginStyleInject()],
   plugins: [
     isVue2 ? createVuePlugin() : vue3({ compiler }),
     VitePluginStyleInject(),
